@@ -84,16 +84,14 @@
         <maven.scm.provider.gitexe.version>1.9.4</maven.scm.provider.gitexe.version>
         <maven.surefire.plugin.version>2.19.1</maven.surefire.plugin.version>
         <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
-
         <scala.dependencies.version>2.11</scala.dependencies.version>
         <scala.version>2.11.8</scala.version>
         <specs2.version>3.7</specs2.version>
+        <gpg.key>F3FA6878</gpg.key>
     </properties>
     
 
@@ -242,6 +240,10 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <configuration>
+                                    <keyname>${gpg.key}</keyname>
+                                    <passphraseServerId>${gpg.key}</passphraseServerId>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
