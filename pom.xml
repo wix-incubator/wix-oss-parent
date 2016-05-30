@@ -6,10 +6,12 @@
     <artifactId>wix-oss-parent</artifactId>
     <version>1.4.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Wix Open Source Parent</name>
+    <name>SPoT</name>
     <description>
-        The parent for all Wix open source projects.
-        This includes the various (common) Maven plugins, the GPG signing profile, SCM, license, issue and distribution management, and common dependencies (i.e., Scala)
+        The Single Point of Truth for all Wix Open Source projects.
+        This POM artifact should be the parent for all Wix open source projects.
+        It includes the various (common) Maven plugins, the GPG signing profile, organization element, licenses,
+        distribution management, and common dependencies (e.g., Scala)
     </description>
     <url>https://github.com/wix/wix-oss-parent</url>
 
@@ -173,7 +175,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
-                    <reportsDirectory>${project.build.directory}/target/surefire-reports</reportsDirectory>
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -189,7 +191,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <summaryFile>${project.build.directory}/target/failsafe-reports/failsafe-summary.xml</summaryFile>
+                    <summaryFile>${project.build.directory}/failsafe-reports/failsafe-summary.xml</summaryFile>
                     <includes>
                         <include>**/*IT.*</include>
                         <include>**/*E2E.*</include>
