@@ -15,23 +15,10 @@
     </description>
     <url>https://github.com/wix/wix-oss-parent</url>
 
-    <developers>
-        <developer>
-            <name>Ohad Raz</name>
-            <email>ohadr@wix.com</email>
-            <roles>
-                <role>owner</role>
-            </roles>
-        </developer>
-        <developer>
-            <name>Igal Harel</name>
-            <email>igalh@wix.com</email>
-            <roles>
-                <role>owner</role>
-            </roles>
-        </developer>
-    </developers>
-
+    <organization>
+        <name>wix.com</name>
+        <url>http://wix.io</url>
+    </organization>
 
     <scm>
         <url>https://github.com/wix/wix-oss-parent</url>
@@ -63,6 +50,25 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+
+    <developers>
+        <developer>
+            <name>Ohad Raz</name>
+            <email>ohadr@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Igal Harel</name>
+            <email>igalh@wix.com</email>
+            <roles>
+                <role>owner</role>
+            </roles>
+        </developer>
+    </developers>
+
 
 
     <!-- required for specs2 -->
@@ -265,6 +271,21 @@
                     </includes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.wix</groupId>
+                <artifactId>wix-oss-ci-police</artifactId>
+                <version>1.1.0</version>
+                <executions>
+                    <execution>
+                        <id>wix-oss-ci-police</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>wix-oss-ci-police</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
